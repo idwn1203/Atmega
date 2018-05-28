@@ -32,8 +32,9 @@ int main(void)
 			case '1':
 			PORTB = 0x01;
 
-	LCD_initialize();
+			LCD_initialize();
 			LCD_string(0x80, "BABOO");
+			PORTC =0xff;
 			//LCD_command(0x18);
 			break;
 
@@ -41,6 +42,7 @@ int main(void)
 			//RTB = 0x00;
 			//	LCD_command(0x1C);
 
+			PORTC =0X01;
 	LCD_initialize();
 	LCD_string(0x80, "SUMIN");
 
@@ -80,6 +82,8 @@ void Port_Init(void)
 	PORTA = 0xff;
 	DDRB = 0xff;
 	DDRA = 0x07;
+	PORTC = 0xff;
+	DDRC =  0X00;
 
 }
 
